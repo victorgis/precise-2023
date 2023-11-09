@@ -47,10 +47,10 @@ export default {
 };
 </script>
     
-    <style scoped>
+<style scoped>
 /* Add your styling for the footer here */
 footer {
-  background-color: #2c3e50;
+  background-color: #1b4965;
   color: #fff;
   padding: 20px 0;
   text-align: center;

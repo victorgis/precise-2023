@@ -78,7 +78,7 @@ export default {
     font-weight: 900;
 }
 .contact-form-inputs {
-  /* width: 90%; */
+  width: 90%;
   padding: 0 20px;
   display: flex;
   justify-content: center;
@@ -128,9 +128,14 @@ h1 {
 }
 
 /* Add responsiveness for smaller screens */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .contact-form-container {
-    width: 90%;
+    /* width: 90%; */
+    display: block;
   }
+  .contact-form-inputs {
+  width: 80%;
+}
+  
 }
 </style>
