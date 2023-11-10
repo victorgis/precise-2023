@@ -12,7 +12,7 @@
           @click="changeTab(index)"
           :class="{ active: activeTab === index }"
         >
-          {{ tab.name }}
+          <span class="tab-name">{{ tab.name }}</span>
         </button>
       </div>
       <div class="tab-content">
@@ -59,7 +59,7 @@ export default {
       tabs: [
         { name: "QGIS Training", content: "Content for Tab 1" },
         { name: "ArcGIS Training", content: "Content for Tab 2" },
-        { name: "Remote Sensing training", content: "Content for Tab 3" },
+        { name: "Remote Sensing Training", content: "Content for Tab 3" },
       ],
     };
   },
@@ -79,6 +79,9 @@ export default {
 .heading-section h1 {
   font-size: 35px;
   font-weight: 900;
+}
+.tab-name {
+  color: #1b4965;
 }
 
 /* hiohioho  */
