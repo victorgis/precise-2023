@@ -91,7 +91,7 @@
             that it was based on this backdrop that the two initiatives
             collaborated to digitally map those hard-to-reach locations.
           </p>
-          <img class="img1" src="./img/pub-7.png" alt="">
+          <img class="img1" src="./img/pub-7.png" alt="" />
         </div>
       </div>
     </div>
@@ -172,5 +172,24 @@ export default {
 .plain-content2 p {
   display: block;
   text-align: center;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .report h1 {
+    font-size: 25px;
+  }
+  .report .img1 {
+    width: 90%;
+  }
+  .report-details h2,
+  .report-details p {
+    text-align: justify;
+    padding: 0 10px;
+  }
+  .report-details img {
+  width: 90%;
+  margin: 20px 0;
+}
 }
 </style>

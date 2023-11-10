@@ -5,78 +5,32 @@
       <div class="heading-section">
         <h1>GIS & Remote Sensing Training</h1>
       </div>
-      <div class="courses">
-        <h1>GIS Certification Course : Geographic Information Systems (QGIS)</h1>
-        <p>
-          Explore the world of Geographic Information Systems with our GIS
-          Certification Course designed for beginners. Whether you're entirely
-          new to GIS or have minimal experience, this course provides
-          foundational knowledge and skills in utilizing spatial data.
-        </p>
-        <h2 class="wyl">What you will learn:</h2>
-
-        <div class="what-you-learn">
-          <div class="what-left">
-            <ul>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp;Using QGIS
-                3 software from scratch
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i
-                >&nbsp;&nbsp;Digitalization and map visualization
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp;Graphic
-                files calibration
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i
-                >&nbsp;&nbsp;Geoprocessing of vector and raster data
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp;Attribute
-                interpolation
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp;Spatial
-                statistics calculations
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp;Working
-                with MS Excel & CSV files
-              </li>
-            </ul>
+      <div class="tab-buttons">
+        <button
+          v-for="(tab, index) in tabs"
+          :key="index"
+          @click="changeTab(index)"
+          :class="{ active: activeTab === index }"
+        >
+          {{ tab.name }}
+        </button>
+      </div>
+      <div class="tab-content">
+        <div
+          v-for="(tab, index) in tabs"
+          :key="index"
+          v-show="activeTab === index"
+        >
+          <div v-if="activeTab == '0'">
+            <QgisTraining />
           </div>
-          <div class="what-right">
-            <ul>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp;Working
-                with spatial data
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp;Finding
-                and loading data (local and online)
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp;Data
-                visualization styles
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp;Importing
-                GPS coordinates
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp;Kriging
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp;Creating
-                maps
-              </li>
-            </ul>
+          <div v-if="activeTab == '1'">
+            <ArcGISTraining />
+          </div>
+          <div v-if="activeTab == '2'">
+            <RemoteSensingTraining />
           </div>
         </div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlsY7XQMRDaL9TxtY2u4fD-mMZDOtNbeuodggEFFf8F-sLHQ/viewform?usp=pp_url" target="_blank"><div class="btn">Register here!</div></a>
       </div>
     </div>
     <Footer />
@@ -86,15 +40,35 @@
 <script>
 import Footer from "@/components/Footer.vue";
 import Header from "@/components/Header.vue";
+import QgisTraining from "@/components/Qgis-training.vue";
+import ArcGISTraining from "@/components/ArcGIS-training.vue";
+import RemoteSensingTraining from "@/components/RemoteSensing-training.vue";
 
 export default {
   name: "PrecisegisGISRSTraining",
+  components: {
+    Header,
+    Footer,
+    QgisTraining,
+    ArcGISTraining,
+    RemoteSensingTraining,
+  },
   data() {
-    return {};
+    return {
+      activeTab: 0,
+      tabs: [
+        { name: "QGIS Training", content: "Content for Tab 1" },
+        { name: "ArcGIS Training", content: "Content for Tab 2" },
+        { name: "Remote Sensing training", content: "Content for Tab 3" },
+      ],
+    };
   },
   mounted() {},
-  methods: {},
-  components: { Header, Footer },
+  methods: {
+    changeTab(index) {
+      this.activeTab = index;
+    },
+  },
 };
 </script>
 
@@ -106,41 +80,45 @@ export default {
   font-size: 35px;
   font-weight: 900;
 }
-.courses {
-  text-align: left;
-}
-.wyl {
-  margin-top: 50px;
-}
-.what-you-learn {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-}
-.what-you-learn li{
-  padding: 10px 0;
-}
-.what-left {
-  margin-left: 20px;
-}
-.what-right {
-  text-align: left;
+
+/* hiohioho  */
+/* Add your styling for tabs and content here */
+.tab-buttons {
+  display: flex;
 }
 
-ul {
-  margin: 0px;
-  padding: 0px;
-}
-li {
-  list-style: none;
+.tab-buttons button {
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  background-color: #f4f4f4;
 }
 
-.btn {
-    background: #1b4965;
-    margin: 20px 0;
-    padding: 10px 20px;
-    border: #1b4965 1px solid;
-    width: 100px;
-    color: #fff;
-    
+.tab-buttons button.active {
+  background-color: #fff;
+  border-bottom: 2px solid #62b6cb;
+}
+
+/* .tab-content div {
+  display: none;
+} */
+
+.tab-content {
+  margin: 60px 0;
+}
+
+.tab-content div.show {
+  display: block;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .main {
+    padding: 0 10px;
+  }
+  .heading-section h1 {
+    font-size: 25px;
+  }
 }
 </style>
