@@ -7,13 +7,17 @@
         <div class="hero-section-details"></div>
         <h1>Software Engineering & Geo-spatial Solutions Company</h1>
         <div class="hero-btn">
-          <div class="get-started-btn">Get Started</div>
-          <div class="contact-us-btn">Contact Us</div>
+          <a href="#getStarted" id="scrollToGetStarted"
+            ><div class="get-started-btn">Get Started</div></a
+          >
+          <a href="#contactUs" id="scrollToGetStarted2"
+            ><div class="contact-us-btn">Contact Us</div></a
+          >
         </div>
       </div>
 
       <!-- Who we are and what we do  -->
-      <div class="who-we-are">
+      <div id="getStarted" class="who-we-are">
         <div class="who-we-are-img">
           <img src="./img/what-we-do.svg" alt="" />
         </div>
@@ -53,7 +57,7 @@
       </div>
 
       <!-- Services  -->
-      <div class="services-section">
+      <div id="services" class="services-section">
         <h1>Services</h1>
         <p class="service-desc">
           Welcome to Precise GIS, your trusted partner in the world of
@@ -81,7 +85,7 @@
               <img src="./img/geospatial.svg" alt="" />
             </div>
             <div class="service-details">
-              <h1>Geo-spatial analysis & Remote Sensing</h1>
+              <h1>Geo-spatial Analysis & Remote Sensing</h1>
               <p>
                 Unleash the power of location-based insights with our Geospatial
                 Solutions. We specialize in harnessing the potential of
@@ -96,10 +100,10 @@
             <div class="service-details">
               <h1>Google Map Business</h1>
               <p>
-                Get your business listed on Google Map and you’re 70% more likely to
-                attract potential customers for on-site location visits. Also,
-                your Google Map listing can pull in up to 35% clicks to your
-                website.
+                Get your business listed on Google Map and you’re 70% more
+                likely to attract potential customers for on-site location
+                visits. Also, your Google Map listing can pull in up to 35%
+                clicks to your website.
               </p>
             </div>
           </div>
@@ -108,7 +112,7 @@
               <img src="./img/data.svg" alt="" />
             </div>
             <div class="service-details">
-              <h1>Data collection Solutions & Analytics</h1>
+              <h1>Data Collection & Analytics Solutions</h1>
               <p>
                 Transform raw data into actionable insights with our Data
                 Analytics services. We're dedicated to helping you extract value
@@ -122,7 +126,7 @@
       </div>
 
       <!-- contact form component  -->
-      <div class="contact-form-container">
+      <div id="contactUs">
         <Contact />
       </div>
     </div>
@@ -142,9 +146,44 @@ export default {
     return {};
   },
 
-  mounted() {},
+  mounted() {
+    this.getStarted();
+    this.contactUs();
+  },
 
-  methods: {},
+  methods: {
+    getStarted() {
+      document
+        .getElementById("scrollToGetStarted")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          const targetElement = document.getElementById("getStarted");
+          if (targetElement) {
+            window.scroll({
+              behavior: "smooth",
+              left: 0,
+              top: targetElement.offsetTop,
+            });
+          }
+        });
+    },
+    contactUs() {
+      document
+        .getElementById("scrollToGetStarted2")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          const targetElement = document.getElementById("contactUs");
+
+          if (targetElement) {
+            window.scroll({
+              behavior: "smooth",
+              left: 0,
+              top: targetElement.offsetTop,
+            });
+          }
+        });
+    },
+  },
 };
 </script>
 
@@ -218,16 +257,13 @@ ul {
 .who-we-are-details i {
   color: #62b6cb;
 }
-
-.contact-form-container {
-  padding: 60px;
-}
 .services-card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   padding: 60px;
   padding-top: 0px;
+  margin-bottom: 20px;
 }
 .services {
   /* height: 300px; */
@@ -275,11 +311,36 @@ ul {
     display: block;
     padding: 10px;
   }
-  .contact-form-container {
-    padding: 10px;
-  }
+
   .who-we-are-img img {
     max-width: 200px;
+  }
+  .services-card {
+    display: block;
+    padding: 0px;
+  }
+  .services {
+    display: block;
+    margin-top: 20px;
+    /* padding-bottom: 35px;
+    padding-top: 35px; */
+  }
+  .service-desc {
+    padding: 0 10px;
+    text-align: justify;
+  }
+  .services-img img {
+    max-width: 40%;
+  }
+  .service-details {
+    padding: 0 10px;
+  }
+  .service-details h1 {
+    text-align: center;
+    font-size: 25px;
+  }
+  .service-details p {
+    text-align: justify;
   }
 }
 </style>

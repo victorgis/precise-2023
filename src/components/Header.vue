@@ -45,9 +45,6 @@
       </div>
     </div>
     <div class="header-container">
-      <!-- <div class="logo">
-        <i class="fa-solid fa-cloud-showers-heavy"></i> Weather App
-      </div> -->
       <div class="logo">
         <a href="/"
           ><img
@@ -60,25 +57,51 @@
         <i class="fa-solid fa-bars"></i>
       </div>
       <ul class="menu" :class="{ open: isMenuOpen }">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">GIS & RS Training</a></li>
-        <li><a href="#">Past Projects</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#getStarted">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li>
+          <router-link to="/gis-rs-training">GIS & RS Training</router-link>
+        </li>
+        <li @mouseover="openProjectsList">
+          <router-link to="/past-projects">Past Projects</router-link>
+          <!-- <i class="fa-solid fa-chevron-down"></i> -->
+          <ul
+            class="submenu"
+            v-if="isOpenProjects"
+            @mouseleave="openProjectsList2"
+          >
+            <li>
+              <router-link
+                to="/humanitarian-mapping-exercise-for-improvement-in-hiv-aids-gender-based-violence-gbv-projects-in-nigeria"
+                >HOTOSM 2020</router-link
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://medium.com/@precisegis" target="_blank">Blog</a>
+        </li>
+        <router-link to="/contact"><li>Contact</li></router-link>
       </ul>
     </div>
   </header>
 </template>
     
-    <script>
+<script>
+import { RouterLink } from "vue-router";
+
 export default {
   name: "HeaderVue",
   data() {
     return {
       isMenuOpen: false,
+      isOpenProjects: false,
     };
+  },
+  components: { RouterLink },
+  mounted() {
+    window.addEventListener("click", this.handleWindowClick);
   },
   methods: {
     toggleMenu() {
@@ -91,6 +114,19 @@ export default {
         icon.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
         this.isMenuOpen = true;
       }
+    },
+
+    openProjectsList() {
+      this.isOpenProjects = true;
+    },
+    openProjectsList2() {
+      this.isOpenProjects = false;
+    },
+    openProjectsList3() {
+      this.isOpenProjects = false;
+    },
+    handleWindowClick() {
+      this.isOpenProjects = false;
     },
   },
 };
@@ -160,6 +196,54 @@ a:hover {
 .menu a:hover {
   color: #62b6cb;
 }
+/* Style for the header igation menu */
+/* ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+ul li {
+  position: relative;
+  padding: 10px 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+ul li:hover {
+  background-color: #f0f0f0;
+} */
+
+/* Style for submenus */
+.submenu {
+  position: absolute;
+  top: 100px;
+  right: 200px;
+  display: none;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+  width: 12%;
+  z-index: 1;
+}
+
+.submenu {
+  display: block;
+}
+
+.submenu li {
+  padding: 8px 15px;
+  margin: 0px;
+}
+
+.submenu li:hover {
+  background-color: #bee9e8; /* Background color on submenu item hover */
+}
+
+/* Add more styling as needed to match your design */
 
 /* Media query for mobile responsiveness */
 @media (max-width: 768px) {
@@ -179,14 +263,18 @@ a:hover {
     flex-direction: column;
     position: absolute;
     top: 45px;
-    right: 15px;
+    right: 0;
     background-color: #2c3e50db;
-    width: 150px;
+    width: 100%;
     z-index: 1;
+    padding: 20px 0px;
+  }
+  .menu a {
+    text-decoration: none;
+    color: #fff;
   }
   .menu li {
     padding: 10px 0;
-    margin: 0 20px;
   }
 
   .menu.open {

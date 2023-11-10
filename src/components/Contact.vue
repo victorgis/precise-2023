@@ -65,7 +65,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
-  padding: 20px;
+  padding: 60px;
   border-radius: 5px;
 }
 
@@ -74,8 +74,8 @@ export default {
   padding: 0 20px;
 }
 .contact-form-details h1 {
-    font-size: 35px;
-    font-weight: 900;
+  font-size: 35px;
+  font-weight: 900;
 }
 .contact-form-inputs {
   width: 90%;
@@ -130,12 +130,12 @@ h1 {
 /* Add responsiveness for smaller screens */
 @media (max-width: 768px) {
   .contact-form-container {
-    /* width: 90%; */
     display: block;
+    padding: 10px;
   }
+
   .contact-form-inputs {
-  width: 80%;
-}
-  
+    width: 80%;
+  }
 }
 </style>

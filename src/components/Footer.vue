@@ -3,33 +3,47 @@
     <div class="footer-container">
       <!-- <div class="footer-logo">Your Footer Logo</div> -->
       <div class="footer-links">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
+        <ul class="ul-grid">
+          <li><a href="/">Home</a></li>
+          <li><a href="/#getStarted">About</a></li>
+          <li><a href="/#services">Services</a></li>
+
+          <li><a href="/past-projects">Past Projects</a></li>
+          <li><a href="https://medium.com/@precisegis">Blog</a></li>
+          <li><a href="/gis-rs-training">GIS & RS Training</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
     </div>
     <div class="social-media">
-      <a href="https://twitter.com/victor_gis"
-        ><i class="fa fa-twitter" aria-hidden="true"></i
-      ></a>
-      <a href="https://www.linkedin.com/in/victoressang/"
-        ><i class="fa fa-linkedin" aria-hidden="true"></i
-      ></a>
-      <a href="https://github.com/victorgis"
-        ><i class="fa fa-github" aria-hidden="true"></i
-      ></a>
-      <a href="https://medium.com/@victorgis"
-        ><i class="fa fa-medium" aria-hidden="true"></i
-      ></a>
-      <a href="https://www.youtube.com/@victoressang"
-        ><i class="fa fa-youtube" aria-hidden="true"></i
-      ></a>
-      <a href="https://veespatial.netlify.app/"
-        ><i class="fas fa-globe-africa"></i
-      ></a>
+      <span class="header-icon-right"
+        ><a href="https://x.com/precisegis"
+          ><i class="fa-brands fa-x-twitter"></i></a
+      ></span>
+      <span class="header-icon-right"
+        ><a href="https://facebook.com/precisegis"
+          ><i class="fa fa-facebook" aria-hidden="true"></i></a
+      ></span>
+      <span class="header-icon-right"
+        ><a href="https://wa.me/message/6RYZLZ6RHVWNB1"
+          ><i class="fa fa-whatsapp" aria-hidden="true"></i></a
+      ></span>
+      <span class="header-icon-right"
+        ><a href="https://www.instagram.com/precisegis2"
+          ><i class="fa fa-instagram" aria-hidden="true"></i></a
+      ></span>
+      <span class="header-icon-right"
+        ><a href="https://medium.com/@precisegis"
+          ><i class="fa fa-medium" aria-hidden="true"></i></a
+      ></span>
+      <span class="header-icon-right"
+        ><a href="https://www.youtube.com/@precisegis6759"
+          ><i class="fa fa-youtube" aria-hidden="true"></i></a
+      ></span>
+      <span class="header-icon-right"
+        ><a href="https://www.linkedin.com/company/34746083"
+          ><i class="fa fa-linkedin" aria-hidden="true"></i></a
+      ></span>
     </div>
     <div>
       <p>
@@ -91,9 +105,18 @@ footer {
   padding: 0 10px;
 }
 .social-media i:hover {
-  color: rgba(187, 187, 187, 0.865);
+  color: #bee9e8;
 }
 
-/* Add additional styles as needed */
+.ul-grid a:hover {
+  color: #bee9e8;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+  .ul-grid li {
+    margin: 10px;
+  }
+}
 </style>
     
