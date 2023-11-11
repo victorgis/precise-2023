@@ -1,4 +1,8 @@
 <template>
+  <div v-if="isLoading">
+    <Loader />
+  </div>
+
   <div class="contact-form-container">
     <div class="contact-form-details">
       <h1>Contact Form</h1>
@@ -9,17 +13,13 @@
       </p>
     </div>
     <div class="contact-form-inputs">
-      <form
-        class="contact-form"
-        method="POST"
-        netlify
-        action="/"
-      >
+      <form class="contact-form">
         <div class></div>
         <input
           type="text"
           id="name"
           name="name"
+          v-model="email.name"
           placeholder="Full Name"
           required
         />
@@ -28,6 +28,7 @@
           type="email"
           id="email"
           name="email"
+          v-model="email.email"
           placeholder="Email"
           required
         />
@@ -35,27 +36,73 @@
         <textarea
           id="message"
           name="message"
+          v-model="email.message"
           placeholder="Message"
           required
         ></textarea>
 
-        <button type="submit">Submit</button>
+        <button @click="sendEmail" type="submit">Submit</button>
       </form>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import { createToast } from "mosha-vue-toastify";
+import Loader from "./Loader.vue";
 export default {
   name: "PrecisegisContact",
-
+  components: { Loader },
   data() {
-    return {};
+    return {
+      isLoading: false,
+      email: {
+        name: "",
+        email: "",
+        message: "",
+      },
+    };
   },
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    async sendEmail(e) {
+      e.preventDefault();
+      this.isLoading = true;
+      try {
+        const emailData = this.email;
+        const result = await axios.post(
+          "https://childsolidarity-contact-page.onrender.com/api/precisegis/contacts",
+          emailData
+        );
+
+        this.isLoading = false;
+        createToast("Message Sent Successfully!", {
+          type: "success",
+          timeout: 3000,
+          position: "top-right",
+          onClose: () => {
+            return window.location.reload();
+          },
+        });
+        console.log("emailData", emailData);
+        console.log("result", result);
+      } catch (error) {
+        console.log(error);
+        this.isLoading = false;
+        createToast("Message not sent", {
+          type: "danger",
+          timeout: 2000,
+          position: "top-right",
+          onClose: () => {
+            return window.location.reload();
+          },
+        });
+      }
+    },
+  },
 };
 </script>
 
