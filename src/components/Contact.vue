@@ -9,7 +9,12 @@
       </p>
     </div>
     <div class="contact-form-inputs">
-      <form class="contact-form" method="POST" data-netlify="true">
+      <form
+        class="contact-form"
+        method="POST"
+        data-netlify="true"
+        action="/thank-you"
+      >
         <div class></div>
         <input
           type="text"
