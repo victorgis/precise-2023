@@ -12,7 +12,7 @@
       <form
         class="contact-form"
         method="POST"
-        data-netlify="true"
+        netlify
         action="/"
       >
         <div class></div>
