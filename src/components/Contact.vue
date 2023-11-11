@@ -13,7 +13,7 @@
       </p>
     </div>
     <div class="contact-form-inputs">
-      <form @submit="sendEmail" class="contact-form">
+      <form class="contact-form">
         <div class></div>
         <input
           type="text"
@@ -41,7 +41,7 @@
           required
         ></textarea>
 
-        <button type="submit">Submit</button>
+        <button @click="sendEmail" type="submit">Submit</button>
       </form>
     </div>
   </div>
