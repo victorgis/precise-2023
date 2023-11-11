@@ -13,7 +13,7 @@
         class="contact-form"
         method="POST"
         data-netlify="true"
-        action="/thank-you"
+        action="/"
       >
         <div class></div>
         <input
