@@ -263,9 +263,9 @@ ul li:hover {
     flex-direction: column;
     position: absolute;
     top: 45px;
-    right: 0;
+    right: 15px;
     background-color: #2c3e50db;
-    width: 100%;
+    width: 95%;
     z-index: 1;
     padding: 20px 0px;
   }
