@@ -4,15 +4,14 @@
   </div>
 </template>
   
-  <script>
+<script>
 export default {
   name: 'LoaderVue',
   components: {}
 }
 </script>
   
-    
-  <style scoped>
+<style scoped>
 .loader {
   position: fixed;
   top: 0;

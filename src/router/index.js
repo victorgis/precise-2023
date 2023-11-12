@@ -4,6 +4,7 @@ import ContactView from '../views/ContactView.vue'
 import IbenoMapathon from '../pages/Ibeno-mapathon-2020.vue'
 import GISTraining from '../pages/GIS-RS-training.vue'
 import PastProjects from '../pages/Past-projects.vue'
+import GoogleMapBusiness from '../dedicatedServices/GoogleMapBusinesses.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/past-projects',
       name: 'PrecisegisPastProjects',
       component: PastProjects
+    },
+    {
+      path: '/google-map-business',
+      name: 'PrecisegisGoogleMapBusinesses',
+      component: GoogleMapBusiness
     },
     {
       path: '/about',

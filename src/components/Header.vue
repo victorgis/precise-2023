@@ -59,24 +59,52 @@
       <ul class="menu" :class="{ open: isMenuOpen }">
         <li><a href="/">Home</a></li>
         <li><a href="/#getStarted">About</a></li>
-        <li><a href="/#services">Services</a></li>
+        <!-- <li><a href="/#services">Services</a></li> -->
+        <li
+          @mouseover="handleServicesMouseOver"
+          @mouseleave="handleServicesMouseLeave"
+        >
+          <a href="#"
+            >Services&nbsp;&nbsp;<span id="dropdownIconServices"
+              ><i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="submenu" v-if="isServicesHovered" ref="dropdown">
+            <a href="/#services"
+              ><li>
+                <i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;Services
+              </li></a
+            >
+            <li
+              @mouseover="handleDServicesMouseOver"
+              @mouseleave="handleDServicesMouseLeave"
+            >
+              <i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;Dedicated
+              Services
+              <ul class="submenu" v-if="isDServicesHovered" ref="dropdown">
+                <li>
+                  <router-link to="/google-map-business">
+                    <i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;Add
+                    Business to Google Map</router-link
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
         <li>
           <router-link to="/gis-rs-training">GIS & RS Training</router-link>
         </li>
-        <li @mouseover="openProjectsList">
-          <router-link to="/past-projects">Past Projects</router-link>
+        <li @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
+          <router-link to="/past-projects"
+            >Past Projects&nbsp;&nbsp;<span id="dropdownIcon"
+              ><i class="fa-solid fa-angle-down"></i></span
+          ></router-link>
           <!-- <i class="fa-solid fa-chevron-down"></i> -->
-          <ul
-            class="submenu"
-            v-if="isOpenProjects"
-            @mouseleave="openProjectsList2"
-          >
-            <li>
-              <router-link
-                to="/humanitarian-mapping-exercise-for-improvement-in-hiv-aids-gender-based-violence-gbv-projects-in-nigeria"
-                >HOTOSM 2020</router-link
-              >
-            </li>
+          <ul class="submenu" v-if="isHovered" ref="dropdown">
+            <router-link
+              to="/humanitarian-mapping-exercise-for-improvement-in-hiv-aids-gender-based-violence-gbv-projects-in-nigeria"
+              ><li>HOTOSM 2020</li></router-link
+            >
           </ul>
         </li>
         <li>
@@ -97,11 +125,15 @@ export default {
     return {
       isMenuOpen: false,
       isOpenProjects: false,
+      isHovered: false,
+      isServicesHovered: false,
+      isDServicesHovered: false,
+      icon: null,
     };
   },
   components: { RouterLink },
   mounted() {
-    window.addEventListener("click", this.handleWindowClick);
+    this.icon = document.getElementById("dropdownIconServices");
   },
   methods: {
     toggleMenu() {
@@ -116,17 +148,41 @@ export default {
       }
     },
 
-    openProjectsList() {
-      this.isOpenProjects = true;
+    handleMouseOver() {
+      // this.icon.innerHTML = `<i class="fa-solid fa-angle-up"></i>`;
+      this.isHovered = true;
+      document.addEventListener("click", this.handleDocumentClick);
     },
-    openProjectsList2() {
-      this.isOpenProjects = false;
+    handleMouseLeave() {
+      // this.icon.innerHTML = `<i class="fa-solid fa-angle-down"></i>`;
+      this.isHovered = false;
+      document.removeEventListener("click", this.handleDocumentClick);
     },
-    openProjectsList3() {
-      this.isOpenProjects = false;
+    handleServicesMouseOver() {
+      // this.icon = document.getElementById("dropdownIcon");
+      this.icon.innerHTML = `<i class="fa-solid fa-angle-up"></i>`;
+      this.isServicesHovered = true;
     },
-    handleWindowClick() {
-      this.isOpenProjects = false;
+
+    handleServicesMouseLeave() {
+      this.icon.innerHTML = `<i class="fa-solid fa-angle-down"></i>`;
+      this.isServicesHovered = false;
+    },
+    handleDServicesMouseOver() {
+      // this.icon = document.getElementById("dropdownIcon");
+      this.icon.innerHTML = `<i class="fa-solid fa-angle-up"></i>`;
+      this.isDServicesHovered = true;
+    },
+    handleDServicesMouseLeave() {
+      this.icon.innerHTML = `<i class="fa-solid fa-angle-down"></i>`;
+      this.isDServicesHovered = false;
+    },
+    handleDocumentClick(event) {
+      if (this.$refs.dropdown && !this.$refs.dropdown.contains(event.target)) {
+        this.isHovered = false;
+        this.isServicesHovered = false;
+        document.removeEventListener("click", this.handleDocumentClick);
+      }
     },
   },
 };
@@ -218,15 +274,17 @@ ul li:hover {
 /* Style for submenus */
 .submenu {
   position: absolute;
-  top: 100px;
-  right: 200px;
+  /* top: 100px; */
+  /* right: 200px; */
+  text-align: left;
   display: none;
   background-color: #fff;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   list-style: none;
   padding: 0px;
   margin: 0;
-  width: 12%;
+  width: 200px;
+  padding-bottom: 50px;
   z-index: 1;
 }
 
