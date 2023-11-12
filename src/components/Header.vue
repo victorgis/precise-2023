@@ -72,7 +72,8 @@
             <ul class="submenu" v-if="isServicesHovered" ref="dropdown">
               <li>
                 <a href="/#services">
-                  <i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;Services</a
+                  <i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;Our
+                  Services</a
                 >
               </li>
               <li
@@ -85,7 +86,13 @@
                   <li>
                     <router-link to="/google-map-business">
                       <i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;Add
-                      Business to Google Map</router-link
+                      Your Business to Google Map</router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to="/landing-page-website">
+                      <i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;Build
+                      Your Business Landing Website</router-link
                     >
                   </li>
                 </ul>
@@ -237,9 +244,9 @@ a {
 li {
   color: #1b4965;
 }
-/* a:hover {
+a:hover {
   color: #62b6cb;
-} */
+}
 
 .menu-button {
   display: none;

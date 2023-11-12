@@ -188,8 +188,8 @@ export default {
     padding: 0 10px;
   }
   .report-details img {
-  width: 90%;
-  margin: 20px 0;
-}
+    width: 90%;
+    margin: 20px 0;
+  }
 }
 </style>

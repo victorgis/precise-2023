@@ -4,50 +4,35 @@
     <div class="main">
       <div class="main-details">
         <!-- <h1>Google Maps Business Listing</h1> -->
-        <h1>Enhance Your Presence: Add Your Company to Google Maps</h1>
+        <h1>Your Business Deserves a Stunning Landing Page</h1>
         <p>
-          Let Customers Find You Easily with Our Expert Google Maps Listing
-          Service
+          Unlock the potential of your brand with a captivating business landing
+          page. Attract customers, showcase your products or services, and leave
+          a lasting impression.
         </p>
         <div class="main-details-img">
-          <img src="./img/google-business-img.jpg" alt="" />
+          <img src="./img/landing-page.jpeg" alt="" />
         </div>
       </div>
       <div class="content">
         <p>
-          Unlock the potential of online visibility by adding your company to
-          Google Maps. Increase your business's discoverability and connect with
-          local customers effortlessly.
+          We create unique and visually appealing landing pages tailored to your
+          brand identity, ensuring a strong online presence.
         </p>
 
         <p>
-          Our dedicated team of experts will guide you through the process,
-          ensuring accurate and compelling information on your Google Maps
-          listing. From attracting more foot traffic to boosting online
-          engagement, the benefits are immense.
+          Your landing page will look stunning on any device, providing a
+          seamless user experience for your visitors.
+        </p>
+        <p>
+          Improve your visibility on search engines with our SEO-friendly
+          landing pages, driving more traffic to your business.
         </p>
 
-        <p>Why Choose Our Google Maps Listing Service?</p>
-        <ul>
-          <li>
-            Professional Guidance: Our experienced team will assist you at every
-            step.
-          </li>
-          <li>
-            Accurate Information: Ensure your business details are correct for
-            customers searching on Google.
-          </li>
-          <li>
-            Increased Visibility: Stand out from the competition and attract
-            more customers.
-          </li>
-          <li>
-            Local Connection: Reach customers in your community and nearby
-            areas.
-          </li>
-        </ul>
-
-        <p>Ready to elevate your business presence?</p>
+        <p>
+          Let's create a powerful online presence for your business. Contact us
+          today and take the first step towards success.
+        </p>
 
         <p>
           Reach out to us via any of our social media handles below or via our
@@ -57,7 +42,7 @@
         <p>To send us a direct message on WhatsApp</p>
         <div class="">
           <a
-            href="https://wa.me/p/24444960208428547/2349077421323"
+            href="https://wa.me/p/7602661673082369/2349077421323"
             target="_blank"
             ><button class="whatsapp-btn">
               Click here!&nbsp;&nbsp;<i
@@ -76,7 +61,7 @@ import Footer from "../components/Footer.vue";
 import Header from "../components/Header.vue";
 
 export default {
-  name: "PrecisegisGoogleMapBusinesses",
+  name: "PrecisegisLandingPageWebsite",
   data() {
     return {};
   },

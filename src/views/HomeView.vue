@@ -46,7 +46,7 @@
             </li>
             <li>
               <i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp; Data
-              Collection & Management
+              Analytics & Management
             </li>
             <li>
               <i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp; Geo-saptial
@@ -98,7 +98,7 @@
               <img src="./img/business.svg" alt="" />
             </div>
             <div class="service-details">
-              <h1>Google Map Business</h1>
+              <h1>Business Listing on Google Map</h1>
               <p>
                 Get your business listed on Google Map and you’re 70% more
                 likely to attract potential customers for on-site location

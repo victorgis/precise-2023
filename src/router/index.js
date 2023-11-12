@@ -5,6 +5,7 @@ import IbenoMapathon from '../pages/Ibeno-mapathon-2020.vue'
 import GISTraining from '../pages/GIS-RS-training.vue'
 import PastProjects from '../pages/Past-projects.vue'
 import GoogleMapBusiness from '../dedicatedServices/GoogleMapBusinesses.vue'
+import LandingPageWebsite from '../dedicatedServices/LandingPageWebsite.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +39,11 @@ const router = createRouter({
       path: '/google-map-business',
       name: 'PrecisegisGoogleMapBusinesses',
       component: GoogleMapBusiness
+    },
+    {
+      path: '/landing-page-website',
+      name: 'PrecisegisLandingPageWebsite',
+      component: LandingPageWebsite
     },
     {
       path: '/about',
