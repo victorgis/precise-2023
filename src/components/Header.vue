@@ -265,7 +265,21 @@ li {
 }
 
 /* Style for submenus */
-.submenu .submenu2 {
+.submenu {
+  position: absolute;
+  text-align: left;
+  display: block;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  width: 200px;
+  padding-bottom: 50px;
+  z-index: 1;
+}
+
+.submenu2 {
   position: absolute;
   text-align: left;
   background-color: #fff;
@@ -283,8 +297,7 @@ li {
   margin: 0px;
 }
 
-.submenu li:hover,
-.submenu-projects li:hover {
+.submenu li:hover {
   background-color: #bee9e8;
 }
 
@@ -308,10 +321,9 @@ li {
     flex-direction: column;
     position: absolute;
     top: 45px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 15px;
     background-color: #2c3e50db;
-    width: 90%;
+    width: 95%;
     z-index: 3;
     padding: 20px 0px;
   }
@@ -339,18 +351,7 @@ li {
     padding: 10px 10px 40px;
     z-index: 2;
   }
-  .submenu-projects {
-    display: block;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: left;
-    color: #1b4965;
-    background-color: #bee9e8;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-    padding: 10px 10px 40px;
-    z-index: 2;
-  }
+
   .submenu2 {
     position: absolute;
     /* left: 50%;
@@ -363,9 +364,7 @@ li {
     z-index: 2;
   }
   .submenu li,
-  .submenu a,
-  .submenu-projects li,
-  .submenu-projects a {
+  .submenu a {
     color: #1b4965;
   }
 }
