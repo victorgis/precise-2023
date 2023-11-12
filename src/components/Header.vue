@@ -60,57 +60,66 @@
         <li><a href="/">Home</a></li>
         <li><a href="/#getStarted">About</a></li>
         <!-- <li><a href="/#services">Services</a></li> -->
-        <li
-          @mouseover="handleServicesMouseOver"
-          @mouseleave="handleServicesMouseLeave"
-        >
-          <a href="#"
-            >Services&nbsp;&nbsp;<span id="dropdownIconServices"
-              ><i class="fa-solid fa-angle-down"></i></span
-          ></a>
-          <ul class="submenu" v-if="isServicesHovered" ref="dropdown">
-            <a href="/#services"
-              ><li>
-                <i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;Services
-              </li></a
-            >
-            <li
-              @mouseover="handleDServicesMouseOver"
-              @mouseleave="handleDServicesMouseLeave"
-            >
-              <i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;Dedicated
-              Services
-              <ul class="submenu" v-if="isDServicesHovered" ref="dropdown">
-                <li>
-                  <router-link to="/google-map-business">
-                    <i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;Add
-                    Business to Google Map</router-link
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
+        <li>
+          <a
+            href="#"
+            @mouseover="handleServicesMouseOver"
+            @mouseleave="handleServicesMouseLeave"
+          >
+            Services&nbsp;&nbsp;<span id="dropdownIconServices"
+              ><i class="fa-solid fa-angle-down"></i
+            ></span>
+            <ul class="submenu" v-if="isServicesHovered" ref="dropdown">
+              <li>
+                <a href="/#services">
+                  <i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;Services</a
+                >
+              </li>
+              <li
+                @mouseover="handleDServicesMouseOver"
+                @mouseleave="handleDServicesMouseLeave"
+              >
+                <i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;Dedicated
+                Services
+                <ul class="submenu2" v-if="isDServicesHovered" ref="dropdown">
+                  <li>
+                    <router-link to="/google-map-business">
+                      <i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;Add
+                      Business to Google Map</router-link
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul></a
+          >
         </li>
         <li>
           <router-link to="/gis-rs-training">GIS & RS Training</router-link>
         </li>
-        <li @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
-          <router-link to="/past-projects"
-            >Past Projects&nbsp;&nbsp;<span id="dropdownIcon"
-              ><i class="fa-solid fa-angle-down"></i></span
-          ></router-link>
-          <!-- <i class="fa-solid fa-chevron-down"></i> -->
-          <ul class="submenu" v-if="isHovered" ref="dropdown">
-            <router-link
-              to="/humanitarian-mapping-exercise-for-improvement-in-hiv-aids-gender-based-violence-gbv-projects-in-nigeria"
-              ><li>HOTOSM 2020</li></router-link
-            >
-          </ul>
+        <li>
+          <a
+            href="#"
+            @mouseover="handleProjectsMouseOver"
+            @mouseleave="handleProjectsMouseLeave"
+          >
+            Past Projects&nbsp;&nbsp;<span id="dropdownIconProjects"
+              ><i class="fa-solid fa-angle-down"></i
+            ></span>
+            <ul class="submenu" v-if="isProjectsHovered">
+              <li>
+                <router-link
+                  to="/humanitarian-mapping-exercise-for-improvement-in-hiv-aids-gender-based-violence-gbv-projects-in-nigeria"
+                  ><i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;HOTOSM
+                  2020</router-link
+                >
+              </li>
+            </ul></a
+          >
         </li>
         <li>
           <a href="https://medium.com/@precisegis" target="_blank">Blog</a>
         </li>
-        <router-link to="/contact"><li>Contact</li></router-link>
+        <li><router-link to="/contact">Contact</router-link></li>
       </ul>
     </div>
   </header>
@@ -125,15 +134,17 @@ export default {
     return {
       isMenuOpen: false,
       isOpenProjects: false,
-      isHovered: false,
+      isProjectsHovered: false,
       isServicesHovered: false,
       isDServicesHovered: false,
       icon: null,
+      projectIcon: null,
     };
   },
   components: { RouterLink },
   mounted() {
     this.icon = document.getElementById("dropdownIconServices");
+    this.projectIcon = document.getElementById("dropdownIconProjects");
   },
   methods: {
     toggleMenu() {
@@ -148,14 +159,14 @@ export default {
       }
     },
 
-    handleMouseOver() {
-      // this.icon.innerHTML = `<i class="fa-solid fa-angle-up"></i>`;
-      this.isHovered = true;
+    handleProjectsMouseOver() {
+      this.projectIcon.innerHTML = `<i class="fa-solid fa-angle-up"></i>`;
+      this.isProjectsHovered = true;
       document.addEventListener("click", this.handleDocumentClick);
     },
-    handleMouseLeave() {
-      // this.icon.innerHTML = `<i class="fa-solid fa-angle-down"></i>`;
-      this.isHovered = false;
+    handleProjectsMouseLeave() {
+      this.projectIcon.innerHTML = `<i class="fa-solid fa-angle-down"></i>`;
+      this.isProjectsHovered = false;
       document.removeEventListener("click", this.handleDocumentClick);
     },
     handleServicesMouseOver() {
@@ -179,7 +190,7 @@ export default {
     },
     handleDocumentClick(event) {
       if (this.$refs.dropdown && !this.$refs.dropdown.contains(event.target)) {
-        this.isHovered = false;
+        this.isProjectsHovered = false;
         this.isServicesHovered = false;
         document.removeEventListener("click", this.handleDocumentClick);
       }
@@ -223,9 +234,12 @@ export default {
 a {
   color: #1b4965;
 }
-a:hover {
-  color: #62b6cb;
+li {
+  color: #1b4965;
 }
+/* a:hover {
+  color: #62b6cb;
+} */
 
 .menu-button {
   display: none;
@@ -249,47 +263,19 @@ a:hover {
   text-decoration: none;
   color: #1b4965;
 }
-.menu a:hover {
-  color: #62b6cb;
-}
-/* Style for the header igation menu */
-/* ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-ul li {
-  position: relative;
-  padding: 10px 20px;
-  cursor: pointer;
-  user-select: none;
-}
-
-ul li:hover {
-  background-color: #f0f0f0;
-} */
 
 /* Style for submenus */
-.submenu {
+.submenu .submenu2 {
   position: absolute;
-  /* top: 100px; */
-  /* right: 200px; */
   text-align: left;
-  display: none;
   background-color: #fff;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   list-style: none;
   padding: 0px;
-  margin: 0;
+  margin: 0px;
   width: 200px;
   padding-bottom: 50px;
   z-index: 1;
-}
-
-.submenu {
-  display: block;
 }
 
 .submenu li {
@@ -297,8 +283,9 @@ ul li:hover {
   margin: 0px;
 }
 
-.submenu li:hover {
-  background-color: #bee9e8; /* Background color on submenu item hover */
+.submenu li:hover,
+.submenu-projects li:hover {
+  background-color: #bee9e8;
 }
 
 /* Add more styling as needed to match your design */
@@ -321,10 +308,11 @@ ul li:hover {
     flex-direction: column;
     position: absolute;
     top: 45px;
-    right: 15px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #2c3e50db;
-    width: 95%;
-    z-index: 1;
+    width: 90%;
+    z-index: 3;
     padding: 20px 0px;
   }
   .menu a {
@@ -332,14 +320,53 @@ ul li:hover {
     color: #fff;
   }
   .menu li {
+    color: #fff;
     padding: 10px 0;
   }
 
   .menu.open {
     display: flex;
   }
-  .sizes {
-    font-size: 22px;
+
+  .submenu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    color: #1b4965;
+    background-color: #bee9e8;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px 10px 40px;
+    z-index: 2;
+  }
+  .submenu-projects {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    color: #1b4965;
+    background-color: #bee9e8;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px 10px 40px;
+    z-index: 2;
+  }
+  .submenu2 {
+    position: absolute;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    text-align: left;
+    color: #1b4965;
+    background-color: #e3faf9;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px 10px 40px;
+    z-index: 2;
+  }
+  .submenu li,
+  .submenu a,
+  .submenu-projects li,
+  .submenu-projects a {
+    color: #1b4965;
   }
 }
 </style>
