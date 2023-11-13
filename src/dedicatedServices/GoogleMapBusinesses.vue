@@ -10,7 +10,7 @@
           Service
         </p>
         <div class="main-details-img">
-          <img src="./img/google-business-img.jpg" alt="" />
+          <img src="./img/google-business-img.png" alt="" />
         </div>
       </div>
       <div class="content">
