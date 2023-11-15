@@ -117,7 +117,7 @@
                 <router-link
                   to="/humanitarian-mapping-exercise-for-improvement-in-hiv-aids-gender-based-violence-gbv-projects-in-nigeria"
                   ><i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;HOTOSM
-                  2020</router-link
+                  2021</router-link
                 >
               </li>
             </ul></a

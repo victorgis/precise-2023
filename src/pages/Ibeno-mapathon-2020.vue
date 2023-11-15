@@ -3,7 +3,7 @@
     <Header />
     <div class="main">
       <div class="report">
-        <h1>HOTOSM Mapathon 2020</h1>
+        <h1>HOTOSM Mapathon 2021</h1>
         <img class="img1" src="./img/pub-2.jpg" alt="" />
 
         <div class="report-details">
