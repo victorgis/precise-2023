@@ -120,6 +120,7 @@
                   2021</router-link
                 >
               </li>
+              <li><a href="/mapathon"><i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;Mapathons</a></li>
             </ul></a
           >
         </li>

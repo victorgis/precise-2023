@@ -6,6 +6,7 @@ import GISTraining from '../pages/GIS-RS-training.vue'
 import PastProjects from '../pages/Past-projects.vue'
 import GoogleMapBusiness from '../dedicatedServices/GoogleMapBusinesses.vue'
 import LandingPageWebsite from '../dedicatedServices/LandingPageWebsite.vue'
+import MapathonContainer from '../pages/Mapathon.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,11 @@ const router = createRouter({
       path: '/landing-page-website',
       name: 'PrecisegisLandingPageWebsite',
       component: LandingPageWebsite
+    },
+    {
+      path: '/mapathon',
+      name: 'PrecisegisMapathon',
+      component: MapathonContainer
     },
     {
       path: '/about',
