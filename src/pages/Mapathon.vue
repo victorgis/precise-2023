@@ -25,9 +25,7 @@
         </div>
         <div class="mapathon">
           <img src="./img/mapathon2019.jpg" alt="" />
-          <p>
-            Humanitarian Mapping Exercise in Collaboration with Missing Maps
-          </p>
+          <p><b> Humanitarian Mapping Exercise in Uyo</b></p>
         </div>
       </div>
     </div>
