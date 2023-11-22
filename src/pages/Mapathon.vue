@@ -74,8 +74,17 @@ export default {
 @media (max-width: 768px) {
   .mapathons-container {
     margin: 10px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: block;
+  }
+  .mapathon {
+    padding: 0px;
+    background: #bee9e8;
+    color: #1b4965;
+    margin: 0px;
+    width: 100%;
+  }
+  .mapathon img {
+    width: 100%;
   }
 }
 </style>
