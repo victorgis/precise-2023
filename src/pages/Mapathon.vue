@@ -80,11 +80,14 @@ export default {
     padding: 0px;
     background: #bee9e8;
     color: #1b4965;
-    margin: 0px;
+    margin: 20px 0px;
     width: 100%;
   }
   .mapathon img {
     width: 100%;
+  }
+  .mapathon p {
+    padding-bottom: 20px;
   }
 }
 </style>
