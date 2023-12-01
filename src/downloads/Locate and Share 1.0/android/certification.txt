@@ -1,0 +1,24 @@
+---------------------------------------------------
+Here are the ownership and the certification details
+of the Locate and Share 1.0
+---------------------------------------------------
+
+app_name - 						Locate and Share
+app_alias - 					locateandshare
+app_author_name - 				VeeSpatial
+app_author_organizational - 	VeeSpatial
+app_author_organization - 		VeeSpatial
+app_author_locality - 			VeeSpatial
+app_author_state - 				Akwa Ibom
+app_author_country - 			Nigeria
+app_password - 					8rd4EZNkkXv7
+app_versionName - 				versionName "1.0"
+app_versionCode - 				100
+
+---------------------------------------------------
+The certification was created by WebIntoApp.com at
+the Friday 1st of December 2023 10:35:22 PM
+
+https://www.webintoapp.com
+---------------------------------------------------
+
