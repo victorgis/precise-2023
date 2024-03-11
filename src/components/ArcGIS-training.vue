@@ -76,6 +76,12 @@
       parameters, search for cases, visualize data, create maps and much more.
     </p>
 
+    <p>
+      This course is valued at ₦30,000. For international students it is valued
+      at $25 | €25 | £25, respectively.
+    </p>
+    <p>To proceed, kindly hit the register button.</p>
+
     <div class="btn">
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSdlsY7XQMRDaL9TxtY2u4fD-mMZDOtNbeuodggEFFf8F-sLHQ/viewform?usp=pp_url"
