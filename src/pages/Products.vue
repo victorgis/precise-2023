@@ -11,6 +11,7 @@
           <img src="../downloads/thumbnail/aks_pol.png" alt="" />
           <p><b>Akwa Ibom Comprehensive Basemap 31 LGA</b></p>
           <a href=""><div class="buy-btn">Buy</div></a>
+          <a href="../downloads/AKWA IBOM AMENDED ADMINISTRATIVE 31.zip">Here</a>
         </div>
 
         <!-- products 2  -->
