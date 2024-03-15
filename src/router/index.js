@@ -8,6 +8,7 @@ import GoogleMapBusiness from "../dedicatedServices/GoogleMapBusinesses.vue";
 import LandingPageWebsite from "../dedicatedServices/LandingPageWebsite.vue";
 import MapathonContainer from "../pages/Mapathon.vue";
 import Products from "../pages/Products.vue";
+import Download from "../products/Download.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,6 +57,11 @@ const router = createRouter({
       path: "/products",
       name: "PrecisegisProducts",
       component: Products,
+    },
+    {
+      path: "/download",
+      name: "PrecisegisDownload",
+      component: Download,
     },
     {
       path: "/about",

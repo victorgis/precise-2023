@@ -8,11 +8,9 @@
       <div class="mapathons-container">
         <!-- products 1  -->
         <div class="mapathon">
-          <img src="../downloads/thumbnail/aks_pol.png" alt="" />
+          <img src="./thumbnail/aks_pol.png" alt="" />
           <p><b>Akwa Ibom Comprehensive Basemap 31 LGA</b></p>
-          <a href=""><div class="buy-btn">Buy</div></a>
-          <a href="../assets/files/Nicholas.pdf">Inside asset</a>
-          <a href="../../public/files/Nicholas.pdf">Inside Public</a>
+          <a href="https://paystack.com/pay/2ar4ga7kzd"><div class="buy-btn">Buy @₦10,000</div></a>
         </div>
 
         <!-- products 2  -->
