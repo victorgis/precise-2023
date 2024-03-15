@@ -57,7 +57,7 @@
         <i class="fa-solid fa-bars"></i>
       </div>
       <ul class="menu" :class="{ open: isMenuOpen }">
-        <li><a href="/">Home</a></li>
+        <!-- <li><a href="/">Home</a></li> -->
         <li><a href="/#getStarted">About</a></li>
         <!-- <li><a href="/#services">Services</a></li> -->
         <li>
@@ -100,6 +100,7 @@
             </ul></a
           >
         </li>
+        <li><a href="/products">Products</a></li>
         <li>
           <router-link to="/gis-rs-training">GIS & RS Training</router-link>
         </li>

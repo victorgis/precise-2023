@@ -91,7 +91,7 @@
 
     <div class="btn">
       <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSdlsY7XQMRDaL9TxtY2u4fD-mMZDOtNbeuodggEFFf8F-sLHQ/viewform?usp=pp_url"
+        href="https://paystack.com/pay/gis-training"
         target="_blank"
         ><div class="button">Register here!</div></a
       >
