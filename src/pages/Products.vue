@@ -11,7 +11,8 @@
           <img src="../downloads/thumbnail/aks_pol.png" alt="" />
           <p><b>Akwa Ibom Comprehensive Basemap 31 LGA</b></p>
           <a href=""><div class="buy-btn">Buy</div></a>
-          <a href="../downloads/thumbnail/aks_pol.png">Here</a>
+          <a href="../assets/files/Nicholas.pdf">Inside asset</a>
+          <a href="../../public/files/Nicholas.pdf">Inside Public</a>
         </div>
 
         <!-- products 2  -->
