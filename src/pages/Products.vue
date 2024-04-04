@@ -14,27 +14,7 @@
         </div>
 
         <!-- products 2  -->
-        <!-- <div class="mapathon">
-          <img src="./img/pub-2.jpg" alt="" />
-          <p>
-            <b
-              >Humanitarian Mapping to Inmprove HIV/AIDS & GBV Projects in
-              Ibeno, Akwa Ibom State. Nigeria</b
-            >
-          </p>
-        </div> -->
-
-        <!-- products 3 -->
-        <!-- <div class="mapathon">
-          <img src="./img/mapathon2020.jpg" alt="" />
-          <p><b>Humanitarian Mapping Exercise For COVID-19</b></p>
-        </div> -->
-
-        <!-- products 4  -->
-        <!-- <div class="mapathon">
-          <img src="./img/mapathon2019.jpg" alt="" />
-          <p><b> Humanitarian Mapping Exercise in Uyo</b></p>
-        </div> -->
+        
       </div>
     </div>
     <Footer />

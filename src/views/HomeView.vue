@@ -5,7 +5,7 @@
       <!-- Hero section  -->
       <div class="hero-section">
         <div class="hero-section-details"></div>
-        <h1>Software Engineering & Geo-spatial Solutions Company</h1>
+        <h1>Software Engineering & Geo-spatial Solutions Brand</h1>
         <div class="hero-btn">
           <a href="#getStarted" id="scrollToGetStarted"
             ><div class="get-started-btn">Get Started</div></a
