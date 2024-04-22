@@ -18,6 +18,11 @@
           ></a>
         </div>
       </div>
+      <div>
+        <img src="./assets/declined-1.gif" alt="">
+        <img src="./assets/failed.gif" alt="">
+        <img src="./assets/Mobile-Payment.gif" alt="">
+      </div>
     </div>
     <Footer />
   </div>
