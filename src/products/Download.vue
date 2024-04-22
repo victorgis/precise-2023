@@ -36,7 +36,7 @@ export default {
   name: "PrecisegisDownload",
   data() {
     return {
-      showPopup: true,
+      showPopup: false,
     };
   },
   mounted() {},
