@@ -10,11 +10,20 @@
         <div class="mapathon">
           <img src="./thumbnail/aks_pol.png" alt="" />
           <p><b>Akwa Ibom Comprehensive Basemap 31 LGA</b></p>
-          <a href="https://paystack.com/pay/2ar4ga7kzd"><div class="buy-btn">Buy @₦10,000</div></a>
+          <a href="https://paystack.com/pay/2ar4ga7kzd"
+            ><div class="buy-btn">Buy @₦10,000</div></a
+          >
         </div>
 
         <!-- products 2  -->
         
+        <div class="mapathon">
+          <img src="./thumbnail/aks_pol.png" alt="" />
+          <p><b>Ward Shapefile of Nigeria</b></p>
+          <a href="https://paystack.com/pay/zumfgxcn5n"
+            ><div class="buy-btn">Buy @₦10,000</div></a
+          >
+        </div>
       </div>
     </div>
     <Footer />
@@ -58,9 +67,9 @@ export default {
   width: 200px;
 }
 .buy-btn {
-    padding: 5px 20px;
-    background: #1b4965;
-    color: #fff;
+  padding: 5px 20px;
+  background: #1b4965;
+  color: #fff;
 }
 
 /* Media query for mobile responsiveness */
